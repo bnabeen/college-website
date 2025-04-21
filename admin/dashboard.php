@@ -312,4 +312,5 @@ include '../includes/admin-header.php';
                     </div>
                 </div>
             </div>
-<?php include '../includes/admin-footer.php'; ?>
+         
+<div class="fixed-bottom"><?php include '../includes/admin-footer.php'; ?></div>

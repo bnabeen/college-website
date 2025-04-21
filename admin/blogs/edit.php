@@ -77,9 +77,7 @@ include '../../includes/admin-header.php';
 <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold text-primary">Edit Blog</h2>
-        <a href="index.php" class="btn btn-outline-secondary">
-            ⬅ Back to List
-        </a>
+        <a href="../blogs/edit.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">⬅ Back</a>
     </div>
 
     <?php if (isset($errors) && !empty($errors)): ?>
@@ -121,9 +119,7 @@ include '../../includes/admin-header.php';
                 </div>
 
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm">
-                        Update Blog
-                    </button>
+                    <button type="submit" class="btn btn-sm btn-outline-primary rounded-pill px-4">Update Blog</button>
                 </div>
             </form>
         </div>

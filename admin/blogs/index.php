@@ -31,9 +31,7 @@ include '../../includes/admin-header.php';
 <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold text-primary">Manage Blogs</h2>
-        <a href="../dashboard.php" class="btn btn-outline-secondary">
-            ⬅ Back
-        </a>
+        <a href="../dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">⬅ Back</a>
     </div>
 
     <?php if (isset($_SESSION['message'])): ?>
@@ -77,9 +75,9 @@ include '../../includes/admin-header.php';
                                     </td>
                                     <td><?php echo format_date($blog['created_at']); ?></td>
                                     <td>
-                                        <a href="edit.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm btn-outline-primary me-1">Edit</a>
-                                        <a href="../../blog-single.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm btn-outline-secondary me-1" target="_blank">View</a>
-                                        <a href="delete.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this blog?')">Delete</a>
+                                        <a href="edit.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm btn-outline-primary rounded-pill px-4">Edit</a>
+                                        <a href="../../blog-single.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm rounded-pill px-4 btn-outline-secondary me-1" target="_blank">View</a>
+                                        <a href="delete.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm rounded-pill px-4 btn-outline-danger" onclick="return confirm('Are you sure you want to delete this blog?')">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
