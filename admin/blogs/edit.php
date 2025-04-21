@@ -22,17 +22,19 @@ $blog_id = (int)$_GET['id'];
 $stmt = mysqli_prepare($conn, "SELECT * FROM blogs WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $blog_id);
 mysqli_stmt_execute($stmt);
-mysqli_stmt_store_result($stmt);
 
-if (mysqli_stmt_num_rows($stmt) === 0) {
+// Get result set from statement
+$result = mysqli_stmt_get_result($stmt); 
+
+if (mysqli_num_rows($result) === 0) {
     $_SESSION['message'] = 'Blog not found';
     $_SESSION['message_type'] = 'danger';
     header('Location: index.php');
     exit;
 }
 
-$blog = $result->fetch_assoc();
-$stmt->close();
+$blog = mysqli_fetch_assoc($result); 
+mysqli_stmt_close($stmt);
 
 // Process form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -53,33 +55,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         // Update blog post
-        $stmt = $conn->prepare("UPDATE blogs SET title = ?, content = ?, image = ?, author_id = ?, status = ?, updated_at = NOW() WHERE id = ?");
-        $stmt->bind_param("sssisi", $title, $content, $image, $author_id, $status, $id);
+        $stmt = mysqli_prepare($conn, "UPDATE blogs SET title = ?, content = ?, image = ?, author_id = ?, status = ?, updated_at = NOW() WHERE id = ?");
+        mysqli_stmt_bind_param($stmt, "sssisi", $title, $content, $image, $author_id, $status, $id);
 
         
-        if ($stmt->execute()) {
+        if (mysqli_stmt_execute($stmt)) {
             $_SESSION['message'] = 'Blog updated successfully';
             $_SESSION['message_type'] = 'success';
             header('Location: index.php');
             exit;
         } else {
-            $errors[] = "Error updating blog: " . $conn->error;
+            $errors[] = "Error updating blog: " . mysqli_connect_error();
         }
-        $stmt->close();
+        mysqli_stmt_close($stmt);
     }
 }
 
 include '../../includes/admin-header.php';
 ?>
 
-<div class="container-fluid">
+<div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Edit Blog</h1>
-        <a href="index.php" class="btn btn-secondary">Back to List</a>
+        <h2 class="fw-bold text-primary">Edit Blog</h2>
+        <a href="index.php" class="btn btn-outline-secondary">
+            ⬅ Back to List
+        </a>
     </div>
-    
+
     <?php if (isset($errors) && !empty($errors)): ?>
-        <div class="alert alert-danger">
+        <div class="alert alert-danger shadow-sm">
             <ul class="mb-0">
                 <?php foreach ($errors as $error): ?>
                     <li><?php echo $error; ?></li>
@@ -87,40 +91,44 @@ include '../../includes/admin-header.php';
             </ul>
         </div>
     <?php endif; ?>
-    
-    <div class="card">
-        <div class="card-body">
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-5">
             <form method="POST" action="">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="<?php echo htmlspecialchars($blog['title']); ?>" required>
+                <div class="mb-4">
+                    <label for="title" class="form-label fw-semibold">Title</label>
+                    <input type="text" class="form-control rounded-3" id="title" name="title" 
+                        value="<?php echo htmlspecialchars($blog['title']); ?>" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="excerpt">Excerpt</label>
-                    <textarea class="form-control" id="excerpt" name="excerpt" rows="3"><?php echo htmlspecialchars($blog['excerpt']); ?></textarea>
+
+                <div class="mb-4">
+                    <label for="excerpt" class="form-label fw-semibold">Excerpt</label>
+                    <textarea class="form-control rounded-3" id="excerpt" name="excerpt" rows="3"><?php echo htmlspecialchars($blog['excerpt']); ?></textarea>
                     <small class="form-text text-muted">A short summary of the blog post.</small>
                 </div>
-                
-                <div class="form-group">
-                    <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content" rows="10" required><?php echo htmlspecialchars($blog['content']); ?></textarea>
+
+                <div class="mb-4">
+                    <label for="content" class="form-label fw-semibold">Content</label>
+                    <textarea class="form-control rounded-3" id="content" name="content" rows="10" required><?php echo htmlspecialchars($blog['content']); ?></textarea>
                 </div>
-                
-                <div class="form-group">
-                    <label for="status">Status</label>
-                    <select class="form-control" id="status" name="status">
+
+                <div class="mb-4">
+                    <label for="status" class="form-label fw-semibold">Status</label>
+                    <select class="form-select rounded-3" id="status" name="status">
                         <option value="draft" <?php echo $blog['status'] == 'draft' ? 'selected' : ''; ?>>Draft</option>
                         <option value="published" <?php echo $blog['status'] == 'published' ? 'selected' : ''; ?>>Published</option>
                     </select>
                 </div>
-                
-                <button type="submit" class="btn btn-primary">Update Blog</button>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm">
+                        Update Blog
+                    </button>
+                </div>
             </form>
         </div>
     </div>
 </div>
-
 
 
 <?php include '../../includes/admin-footer.php'; ?>
