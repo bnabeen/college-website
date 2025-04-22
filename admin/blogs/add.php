@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $image_folder = "C:/xampp/htdocs/learn-php/college-website/assets/uploads/blogs/" . basename($image_name);
 
     if ($image_error === 0) {
-        if ($image_size > 10000000) {
+        if ($image_size > 5242880) {
             $_SESSION['message'] = "Image size is too large!";
             $_SESSION['message_type'] = 'danger';
             header('Location: add.php');
@@ -52,24 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 }
+include '../../includes/admin-header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Blog</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
     <div class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h2 class="mb-0">Add Blog</h2>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold text-primary">Add Blog</h2>
+                    <a href="../dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">⬅ Back</a>
                     </div>
                     <div class="card-body">
                         <!-- Display session messages -->
@@ -97,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image:</label>
                                 <input class="form-control" type="file" name="image" id="image" required>
-                                <div class="form-text">Maximum file size: 1MB</div>
+                                <div class="form-text">Maximum file size: 5MB</div>
                             </div>
                             
                             <div class="mb-4">

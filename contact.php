@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($errors)) {
         // Prepare SQL statement
         $stmt = mysqli_prepare($conn, "INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
-        my_sqli_stmt_bind_param($stmt, "ssss", $name, $email, $subject, $message);
+        mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $subject, $message);
         
         // Execute statement
         if (mysqli_stmt_execute($stmt)) {
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors[] = "Failed to send message: " . $mysqli_connect_error();
         }
         
-        mysqli_close($stmt);
+        mysqli_stmt_close($stmt);
     }
 }
 

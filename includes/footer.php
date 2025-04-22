@@ -1,4 +1,3 @@
-<!-- footer.php -->
 <footer class="footer py-4 bg-dark text-white">
     <div class="container">
         <div class="row">
@@ -32,9 +31,5 @@
         </div>
     </div>
 </footer>
-
-<!-- Add your JavaScript files (if any) -->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
 </body>
 </html>
