@@ -1,15 +1,18 @@
 <?php
-function get_count($conn, $table, $condition = null) {
-    $sql = "SELECT COUNT(*) as count FROM `$table`";
-    if ($condition) {
-        $sql .= " WHERE $condition";
+function get_count($conn, $table, $condition = '') {
+    $sql = "SELECT COUNT(*) as count FROM `" . mysqli_real_escape_string($conn, $table) . "`";
+    
+    if (!empty($condition)) {
+        $sql .= " WHERE " . $condition;
     }
+    
     $result = mysqli_query($conn, $sql);
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-        return $row['count'];
+    if (!$result) {
+        return 0;
     }
-    return 0;
+    
+    $row = mysqli_fetch_assoc($result);
+    return (int)$row['count'];
 }
 
 function get_user_by_id($conn, $user_id) {
