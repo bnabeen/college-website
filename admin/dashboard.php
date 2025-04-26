@@ -47,7 +47,7 @@ include '../includes/admin-header.php';
                     if (!empty($recent_blogs)) {
                         foreach ($recent_blogs as $blog) {
                             echo '<div class="mb-2 text-truncate">';
-                            echo '<a href="blogs/edit.php?id=' . $blog['id'] . '" class="text-decoration-none text-secondary">';
+                            echo '<a href="../blog-single.php?id=' . $blog['id'] . '" class="text-decoration-none text-secondary">';
                             echo '<small><i class="bi bi-file-earmark-text me-1"></i>';
                             echo htmlspecialchars($blog['title']) . '</small>';
                             echo '</a>';

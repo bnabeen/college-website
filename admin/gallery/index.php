@@ -36,7 +36,7 @@ include '../../includes/admin-header.php';
         <h2 class="fw-bold text-primary">Gallery Management</h2>
         <div>
             <a href="upload.php" class="btn btn-primary rounded-pill px-4">+ Add New Image</a>
-            <a href="../dashboard.php" class="btn btn-outline-primary rounded-pill px-4 ms-2">⬅ Back</a>
+            <a href="../dashboard.php" class="btn btn-outline-primary rounded-pill px-4 ms-2">← Back</a>
         </div>
     </div>
 

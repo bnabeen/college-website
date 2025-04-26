@@ -31,7 +31,10 @@ include '../../includes/admin-header.php';
 <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold text-primary">Manage Blogs</h2>
-        <a href="../dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">⬅ Back</a>
+        <div>
+            <a href="add.php" class="btn btn-primary rounded-pill px-4">+ Add New Blog</a>
+            <a href="../dashboard.php" class="btn btn-outline-primary rounded-pill px-4 ms-2">← Back</a>
+        </div>
     </div>
 
     <?php if (isset($_SESSION['message'])): ?>

@@ -77,7 +77,7 @@ include '../../includes/admin-header.php';
 <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold text-primary">Edit Blog</h2>
-        <a href="../blogs/edit.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">⬅ Back</a>
+        <a href="../blogs/edit.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">← Back</a>
     </div>
 
     <?php if (isset($errors) && !empty($errors)): ?>

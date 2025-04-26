@@ -15,7 +15,7 @@ include 'includes/header.php';
 ?>
 
 <!-- Page Title -->
-<section class="py-5 text-center bg-primary text-white">
+<section class="py-5 text-center fw-bold bg-light text-primary">
     <div class="container">
         <h1 class="mb-0">Our Courses</h1>
         <p class="lead">Explore our range of academic and skill-based programs</p>

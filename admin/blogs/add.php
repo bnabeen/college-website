@@ -58,8 +58,11 @@ include '../../includes/admin-header.php';
         <div class="row justify-content-center">
         <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="fw-bold text-primary">Add Blog</h2>
-                    <a href="../dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">⬅ Back</a>
+                    <div>
+                        <a href="index.php" class="btn btn-primary rounded-pill px-4">View Blogs</a>
+                        <a href="../dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">← Back</a>
                     </div>
+                </div>
                     <div class="card-body">
                         <!-- Display session messages -->
                         <?php if (isset($_SESSION['message'])): ?>

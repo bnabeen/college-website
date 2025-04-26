@@ -58,7 +58,7 @@ include '../../includes/admin-header.php';
     <div class="row justify-content-center">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="fw-bold text-primary">Add Course</h2>
-            <a href="../dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">⬅ Back</a>
+            <a href="../dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill px-4">← Back</a>
         </div>
         <div class="card-body">
             <?php if (isset($_SESSION['message'])): ?>

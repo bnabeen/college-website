@@ -15,7 +15,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Include other global settings if needed
-// define('SITE_NAME', 'Nepal College of Technology');
+define('SITE_NAME', 'Nepal College of Technology');
+define('SITE_SHORT_NAME', 'NCT');
 define('ADMIN_EMAIL', 'ekbazzarnepal@gmail.com');
 
 ?>
