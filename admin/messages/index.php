@@ -67,6 +67,7 @@ include '../../includes/admin-header.php';
                             </tr>
                         </thead>
                         <tbody>
+                            
                             <?php foreach ($messages as $message): ?>
                                 <tr class="<?php echo $message['status'] === 'unread' ? 'table-active' : ''; ?>">
                                     <td><?php echo $message['id']; ?></td>
@@ -84,11 +85,23 @@ include '../../includes/admin-header.php';
                                     </td>
                                     <td><?php echo format_date($message['created_at']); ?></td>
                                     <td>
-                                        <a href="view.php?id=<?php echo $message['id']; ?>" 
-                                           class="btn btn-sm btn-outline-primary rounded-pill px-3">View</a>
-                                        <a href="delete.php?id=<?php echo $message['id']; ?>" 
-                                           class="btn btn-sm btn-outline-danger rounded-pill px-3 ms-1"
-                                           onclick="return confirm('Are you sure you want to delete this message?')">Delete</a>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button type="button" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center p-2 view-message"  style="width: 40px; height: 40px;"
+                                                    data-bs-toggle="modal" data-bs-target="#messageModal"
+                                                    data-id="<?php echo $message['id']; ?>"
+                                                    data-name="<?php echo htmlspecialchars($message['name']); ?>"
+                                                    data-email="<?php echo htmlspecialchars($message['email']); ?>"
+                                                    data-subject="<?php echo htmlspecialchars($message['subject']); ?>"
+                                                    data-message="<?php echo htmlspecialchars($message['message']); ?>">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <a href="delete.php?id=<?php echo $message['id']; ?>" 
+                                                class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center p-2"  style="width: 40px; height: 40px;"
+                                                onclick="return confirm('Are you sure you want to delete this message?')">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -127,5 +140,60 @@ include '../../includes/admin-header.php';
         </div>
     </div>
 </div>
+
+<!-- Message Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLabel">Message Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name:</strong> <span id="messageName"></span></p>
+                <p><strong>Email:</strong> <span id="messageEmail"></span></p>
+                <p><strong>Subject:</strong> <span id="messageSubject"></span></p>
+                <p><strong>Message:</strong></p>
+                <p id="messageContent"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary mark-as-read" data-id="">Mark as Read</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const messageModal = document.getElementById('messageModal');
+        messageModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const messageId = button.dataset.id;
+            const messageName = button.dataset.name;
+            const messageEmail = button.dataset.email;
+            const messageSubject = button.dataset.subject;
+            const messageContent = button.dataset.message;
+
+            document.getElementById('messageName').innerText = messageName;
+            document.getElementById('messageEmail').innerText = messageEmail;
+            document.getElementById('messageSubject').innerText = messageSubject;
+            document.getElementById('messageContent').innerText = messageContent;
+            document.querySelector('.mark-as-read').dataset.id = messageId;
+        });
+
+        document.querySelector('.mark-as-read').addEventListener('click', function () {
+            const messageId = this.dataset.id;
+            fetch('mark_as_read.php?id=' + messageId)
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        alert('Failed to mark as read');
+                    }
+                });
+        });
+    });
+</script>
 
 <?php include '../../includes/admin-footer.php'; ?>

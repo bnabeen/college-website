@@ -66,25 +66,48 @@ include '../../includes/admin-header.php';
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($blogs as $blog): ?>
-                                <tr>
-                                    <td><?php echo $blog['id']; ?></td>
-                                    <td><?php echo htmlspecialchars($blog['title']); ?></td>
-                                    <td><?php echo htmlspecialchars($blog['author'] ?? 'Unknown'); ?></td>
-                                    <td>
-                                        <span class="badge bg-<?php echo $blog['status'] == 'published' ? 'success' : 'warning'; ?>">
-                                            <?php echo ucfirst($blog['status']); ?>
-                                        </span>
-                                    </td>
-                                    <td><?php echo format_date($blog['created_at']); ?></td>
-                                    <td>
-                                        <a href="edit.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm btn-outline-primary rounded-pill px-4">Edit</a>
-                                        <a href="../../blog-single.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm rounded-pill px-4 btn-outline-secondary me-1" target="_blank">View</a>
-                                        <a href="delete.php?id=<?php echo $blog['id']; ?>" class="btn btn-sm rounded-pill px-4 btn-outline-danger" onclick="return confirm('Are you sure you want to delete this blog?')">Delete</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
+    <?php foreach ($blogs as $blog): ?>
+        <tr>
+            <td><?php echo $blog['id']; ?></td>
+            <td><?php echo htmlspecialchars($blog['title']); ?></td>
+            <td><?php echo htmlspecialchars($blog['author'] ?? 'Unknown'); ?></td>
+            <td>
+                <span class="badge bg-<?php echo $blog['status'] == 'published' ? 'success' : 'warning'; ?>">
+                    <?php echo ucfirst($blog['status']); ?>
+                </span>
+            </td>
+            <td><?php echo format_date($blog['created_at']); ?></td>
+            <td class="d-flex gap-1">
+                <!-- Edit Button -->
+                <a href="edit.php?id=<?php echo $blog['id']; ?>" 
+                   class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center p-2"
+                   style="width: 40px; height: 40px;" 
+                   data-bs-toggle="tooltip" title="Edit">
+                    <i class="fas fa-pen"></i>
+                </a>
+
+                <!-- View Button -->
+                <a href="../../blog-single.php?id=<?php echo $blog['id']; ?>" 
+                   class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-2" 
+                   style="width: 40px; height: 40px;"
+                   target="_blank"
+                   data-bs-toggle="tooltip" title="View">
+                    <i class="fas fa-eye"></i>
+                </a>
+
+                <!-- Delete Button -->
+                <a href="delete.php?id=<?php echo $blog['id']; ?>" 
+                   class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center p-2"
+                   style="width: 40px; height: 40px;" 
+                   onclick="return confirm('Are you sure you want to delete this blog?')"
+                   data-bs-toggle="tooltip" title="Delete">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</tbody>
+
                     </table>
                 </div>
 

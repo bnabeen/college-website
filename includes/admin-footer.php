@@ -1,6 +1,3 @@
-<head>
-    <link rel="stylesheet" href="../css/admin-footer.css">
-</head>
 <footer class="footer mt-auto py-4 bg-dark text-white">
     <div class="container">
         <div class="row justify-content-center align-items-center">

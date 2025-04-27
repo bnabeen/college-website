@@ -26,11 +26,11 @@ include '../includes/admin-header.php';
 ?>
 
 
-<div>
+<div class="d-flex flex-column min-vh-100">
     <div class="container-fluid">
         <div class="row">
             <!-- Left Sidebar -->
-            <div class="col-lg-2 col-xl-2 admin-sidebar d-none d-lg-block">
+            <div class="col-lg-2 col-xl-2 admin-sidebar d-none d-lg-block p-3 bg-light border-end min-vh-100">
                 <h6 class="side-panel-heading">Quick Access</h6>
                 <div class="list-group list-group-flush mb-4">
                     <a href="blogs/add.php" class="list-group-item list-group-item-action border-0 bg-transparent"> Add Blog </a>
@@ -43,7 +43,7 @@ include '../includes/admin-header.php';
                 <h6 class="side-panel-heading">Recent Blog Posts</h6>
                 <div class="recent-blogs mb-4">
                     <?php
-                    $recent_blogs = get_recent_items($conn, 'blogs', 3);
+                    $recent_blogs = get_recent_items($conn, 'blogs', 5);
                     if (!empty($recent_blogs)) {
                         foreach ($recent_blogs as $blog) {
                             echo '<div class="mb-2 text-truncate">';
@@ -63,7 +63,7 @@ include '../includes/admin-header.php';
                 <h6 class="side-panel-heading">Recent Messages</h6>
                 <div class="recent-messages">
                     <?php
-                    $recent_messages = get_recent_items($conn, 'contact_messages', 3);
+                    $recent_messages = get_recent_items($conn, 'contact_messages', 5);
                     if (!empty($recent_messages)) {
                         foreach ($recent_messages as $message) {
                             $class = $message['status'] == 'unread' ? 'text-primary fw-bold' : 'text-secondary';
@@ -83,21 +83,21 @@ include '../includes/admin-header.php';
             
             <!-- Main Content Area -->
             <div class="col-lg-9 col-xl-10 admin-content">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h1 class="mb-0">Admin Dashboard</h1>
+                <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-white shadow-sm">
+                    <h3 class="mb-0">Admin Dashboard</h3>
                     <div class="d-flex align-items-center">
                         <span class="text-muted me-2"><?php echo date('l, F j, Y'); ?></span>
                     </div>
                 </div>
                 
                 <!-- Dashboard Stats Cards -->
-                <div class="row g-4 mb-5">
+                <div class="row g-4 mb-5 justify-content-center text-center">
                     <!-- Blog Posts -->
                     <div class="col-md-4 col-xl-2">
                         <div class="card dashboard-card h-100 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-file-earmark-text card-icon"></i>
-                                <div class="stats-number"><?php echo $blog_count; ?></div>
+                                <div class="stats-number"><h1><?php echo $blog_count; ?></h1></div>
                                 <p class="stats-label">Blog Posts</p>
                             </div>
                             <div class="card-footer bg-white border-0 text-center pb-3">
@@ -111,7 +111,7 @@ include '../includes/admin-header.php';
                         <div class="card dashboard-card h-100 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-mortarboard card-icon"></i>
-                                <div class="stats-number"><?php echo $course_count; ?></div>
+                                <div class="stats-number"><h1><?php echo $course_count; ?></h1></div>
                                 <p class="stats-label">Courses</p>
                             </div>
                             <div class="card-footer bg-white border-0 text-center pb-3">
@@ -125,7 +125,7 @@ include '../includes/admin-header.php';
                         <div class="card dashboard-card h-100 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-people card-icon"></i>
-                                <div class="stats-number"><?php echo $faculty_count; ?></div>
+                                <div class="stats-number"><h1><?php echo $faculty_count; ?></h1></div>
                                 <p class="stats-label">Faculty</p>
                             </div>
                             <div class="card-footer bg-white border-0 text-center pb-3">
@@ -139,7 +139,7 @@ include '../includes/admin-header.php';
                         <div class="card dashboard-card h-100 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-envelope card-icon"></i>
-                                <div class="stats-number"><?php echo $unread_messages; ?></div>
+                                <div class="stats-number"><h1><?php echo $unread_messages; ?></h1></div>
                                 <p class="stats-label">Unread Messages</p>
                             </div>
                             <div class="card-footer bg-white border-0 text-center pb-3">
@@ -153,7 +153,7 @@ include '../includes/admin-header.php';
                         <div class="card dashboard-card h-100 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-images card-icon"></i>
-                                <div class="stats-number"><?php echo $gallery_count; ?></div>
+                                <div class="stats-number"><h1><?php echo $gallery_count; ?></h1></div>
                                 <p class="stats-label">Gallery Images</p>
                             </div>
                             <div class="card-footer bg-white border-0 text-center pb-3">
@@ -165,4 +165,7 @@ include '../includes/admin-header.php';
             </div>
         </div>
     </div>
-<div><?php include '../includes/admin-footer.php'; ?></div>
+        
+</div>
+    
+<?php include '../includes/admin-footer.php'; ?>

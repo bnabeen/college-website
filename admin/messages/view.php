@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once '../../includes/config.php';
 require_once '../../includes/db.php';
 require_once '../../includes/functions.php';
@@ -104,4 +104,4 @@ include '../../includes/admin-header.php';
     </div>
 </div>
 
-<?php include '../../includes/admin-footer.php'; ?>
+<?php include '../../includes/admin-footer.php'; ?> -->

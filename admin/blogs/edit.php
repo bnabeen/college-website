@@ -90,8 +90,8 @@ include '../../includes/admin-header.php';
         </div>
     <?php endif; ?>
 
-    <div class="card shadow-lg border-0 rounded-4">
-        <div class="card-body p-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
             <form method="POST" action="">
                 <div class="mb-4">
                     <label for="title" class="form-label fw-semibold">Title</label>
