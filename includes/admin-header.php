@@ -28,7 +28,7 @@
                 $profile_image = $user['profile_image'] ?? 'default-avatar.png';
                 mysqli_stmt_close($profile_query);
                 ?>
-                <img src="<?php echo BASE_URL . '/assets/images/admin/' . htmlspecialchars($profile_image); ?>" 
+                <img src="<?php echo BASE_URL . '/assets/uploads//admin/' . htmlspecialchars($profile_image); ?>" 
                      alt="<?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Admin'); ?>" 
                      class="rounded-circle me-2" 
                      style="width: 32px; height: 32px; object-fit: cover;">
@@ -96,7 +96,7 @@
                         $profile_image = $user['profile_image'] ?? 'default-avatar.png';
                         mysqli_stmt_close($profile_query);
                         ?>
-                        <img src="<?php echo BASE_URL . '/assets/images/admin/' . htmlspecialchars($profile_image); ?>" 
+                        <img src="<?php echo BASE_URL . '/assets/uploads//admin/' . htmlspecialchars($profile_image); ?>" 
                              alt="<?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Admin'); ?>" 
                              class="rounded-circle me-2" 
                              style="width: 32px; height: 32px; object-fit: cover;">

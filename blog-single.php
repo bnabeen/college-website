@@ -19,7 +19,7 @@ include 'includes/header.php';
             <h2 class="mb-3"><?php echo htmlspecialchars($blog['title']); ?></h2>
             <p class="text-muted"><?php echo format_date($blog['created_at']); ?></p>
             <?php if (!empty($blog['image'])): ?>
-                <img src="assets/images/<?php echo $blog['image']; ?>" class="img-fluid rounded mb-4" alt="<?php echo htmlspecialchars($blog['title']); ?>">
+                <img src="assets/uploads/blogs/<?php echo $blog['image']; ?>" class="img-fluid rounded mb-4" alt="<?php echo htmlspecialchars($blog['title']); ?>">
             <?php endif; ?>
             <div>
                 <?php echo nl2br($blog['content']); ?>

@@ -35,9 +35,9 @@ include 'includes/header.php';
             <!-- Course Image -->
             <div class="col-md-6 mb-4">
                 <?php if (!empty($course['image'])): ?>
-                    <img src="assets/images/<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>" class="img-fluid rounded shadow">
+                    <img src="assets/uploads//<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>" class="img-fluid rounded shadow">
                 <?php else: ?>
-                    <img src="assets/images/mobile-app-development.png" alt="Image" class="img-fluid rounded shadow">
+                    <img src="assets/uploads//mobile-app-development.png" alt="Image" class="img-fluid rounded shadow">
                 <?php endif; ?>
             </div>
 

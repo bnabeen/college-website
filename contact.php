@@ -49,7 +49,7 @@ include 'includes/header.php';
         </div>
     </div>
     <div class="position-absolute top-0 end-0 w-50 h-100 d-none d-lg-block">
-        <div class="h-100 w-100 bg-overlay" style="background: url('<?php echo BASE_URL; ?>/assets/images/contact-hero.jpg') center/cover;"></div>
+        <div class="h-100 w-100 bg-overlay" style="background: url('<?php echo BASE_URL; ?>/assets/uploads/contact') center/cover;"></div>
     </div>
 </div>
 

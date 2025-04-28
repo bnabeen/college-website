@@ -32,7 +32,7 @@ include 'includes/header.php';
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <?php if (!empty($course['image'])): ?>
-                                <img src="assets/images/<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
+                                <img src="assets/uploads//<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h3><?php echo htmlspecialchars($course['name']); ?></h3>
@@ -63,7 +63,7 @@ include 'includes/header.php';
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <?php if (!empty($course['image'])): ?>
-                                <img src="assets/images/<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
+                                <img src="assets/uploads//<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h3><?php echo htmlspecialchars($course['name']); ?></h3>

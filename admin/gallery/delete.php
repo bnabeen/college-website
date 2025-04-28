@@ -24,15 +24,15 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 $image_id = (int)$_GET['id'];
 
 // First get the image details to delete the file
-$stmt = mysqli_prepare($conn, "SELECT image_name FROM gallery WHERE id = ?");
+$stmt = mysqli_prepare($conn, "SELECT image FROM gallery WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $image_id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
 if ($image = mysqli_fetch_assoc($result)) {
     // Delete the image file if it exists
-    if (!empty($image['image_name'])) {
-        $image_path = "../../assets/images/gallery/" . $image['image_name'];
+    if (!empty($image['image'])) {
+        $image_path = "../../assets/uploads//gallery/" . $image['image'];
         if (file_exists($image_path)) {
             unlink($image_path);
         }

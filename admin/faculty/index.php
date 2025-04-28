@@ -75,7 +75,7 @@ include '../../includes/admin-header.php';
                                     <td><?php echo $faculty['id']; ?></td>
                                     <td>
                                         <?php if (!empty($faculty['image'])): ?>
-                                            <img src="../../assets/images/faculty/<?php echo htmlspecialchars($faculty['image']); ?>" 
+                                            <img src="../../assets/uploads//faculty/<?php echo htmlspecialchars($faculty['image']); ?>" 
                                                 alt="<?php echo htmlspecialchars($faculty['name']); ?>" 
                                                 class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
                                         <?php endif; ?>

@@ -6,7 +6,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="footer-content pe-lg-4">
                     <div class="mb-4">
-                        <img src="<?php echo BASE_URL ?? ''; ?>/assets/images/logo-white.png" alt="NCT Logo" height="40">
+                        <img src="<?php echo BASE_URL ?? ''; ?>/assets/uploads//logo-white.png" alt="NCT Logo" height="40">
                     </div>
                     <p class="text-muted mb-4">We are a leading institution in Nepal dedicated to providing quality education and practical skills for the future.</p>
                     <div class="social-links">

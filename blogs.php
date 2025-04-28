@@ -19,7 +19,7 @@ include 'includes/header.php';
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <?php if (!empty($blog['image'])): ?>
-                                <img src="assets/images/<?php echo $blog['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($blog['title']); ?>">
+                                <img src="assets/uploads/blogs<?php echo $blog['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($blog['title']); ?>">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($blog['title']); ?></h5>

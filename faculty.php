@@ -26,7 +26,7 @@ include 'includes/header.php';
                 <?php foreach ($faculty_members as $faculty): ?>
                     <div class="col-md-4">
                         <div class="card h-100 shadow-sm">
-                            <img src="assets/images/<?= htmlspecialchars($faculty['image']) ?>" class="card-img-top" alt="<?= htmlspecialchars($faculty['name']) ?>">
+                            <img src="assets/uploads//<?= htmlspecialchars($faculty['image']) ?>" class="card-img-top" alt="<?= htmlspecialchars($faculty['name']) ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= htmlspecialchars($faculty['name']) ?></h5>
                                 <p class="card-text"><strong>Position:</strong> <?= htmlspecialchars($faculty['position']) ?></p>

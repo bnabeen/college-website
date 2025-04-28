@@ -72,10 +72,10 @@ include '../../includes/admin-header.php';
                                     <div class="d-flex justify-content-between align-items-center">
                                         <a href="../../assets/uploads/gallery/<?php echo htmlspecialchars($image['image'] ?? ''); ?>" 
                                            class="btn btn-sm btn-outline-primary rounded-pill px-3"
-                                           target="_blank">View</a>
+                                           target="_blank"><i class="fas fa-eye"></i> View</a>
                                         <a href="delete.php?id=<?php echo $image['id']; ?>" 
                                            class="btn btn-sm btn-outline-danger rounded-pill px-3"
-                                           onclick="return confirm('Are you sure you want to delete this image?')">Delete</a>
+                                           onclick="return confirm('Are you sure you want to delete this image?')"><i class="fas fa-trash-alt"></i> Delete</a>
                                     </div>
                                 </div>
                             </div>

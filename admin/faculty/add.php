@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Generate unique filename
     $image_ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
     $new_image_name = uniqid() . '.' . $image_ext;
-    $upload_dir = "../../assets/images/faculty/";
+    $upload_dir = "../../assets/uploads//faculty/";
     
     // Create directory if it doesn't exist
     if (!file_exists($upload_dir)) {

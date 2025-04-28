@@ -10,7 +10,7 @@
     <meta name="keywords" content="NCT, college, technology, education, nepal">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL ?? ''; ?>/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL ?? ''; ?>/assets/uploads//favicon.ico">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="<?php echo BASE_URL ?? ''; ?>/">
-                <img src="<?php echo BASE_URL ?? ''; ?>/assets/images/logo.png" alt="NCT Logo" height="50" class="me-2">
+                <img src="<?php echo BASE_URL ?? ''; ?>/assets/uploads//logo.png" alt="NCT Logo" height="50" class="me-2">
                 <span class="fw-bold text-primary">NCT</span>
             </a>
             

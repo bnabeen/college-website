@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Handle profile image upload
     if (!empty($_FILES['profile_image']['name'])) {
-        $upload_dir = "../assets/images/admin/";
+        $upload_dir = "../assets/uploads//admin/";
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
@@ -135,8 +135,8 @@ include '../includes/admin-header.php';
                             <div class="position-relative d-inline-block">
                                 <img src="<?php 
                                     echo !empty($user['profile_image']) 
-                                        ? '../assets/images/admin/' . htmlspecialchars($user['profile_image']) 
-                                        : '../assets/images/admin/default-avatar.png'; 
+                                        ? '../assets/uploads//admin/' . htmlspecialchars($user['profile_image']) 
+                                        : '../assets/uploads//admin/default-avatar.png'; 
                                     ?>" 
                                     alt="Profile Image" 
                                     class="rounded-circle profile-image" 

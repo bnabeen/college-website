@@ -16,7 +16,7 @@ a {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/uploads//hero-bg.jpg') no-repeat center center/cover;
     color: white;
     padding: 80px 0;
 }

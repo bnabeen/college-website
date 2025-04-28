@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $image_ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
         $new_image_name = uniqid() . '.' . $image_ext;
-        $image_folder = "../../assets/images/faculty/" . $new_image_name;
+        $image_folder = "../../assets/uploads//faculty/" . $new_image_name;
 
         if ($image_error === 0) {
             if ($image_size > 5242880) {
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (move_uploaded_file($image_tmp_name, $image_folder)) {
                     // Delete old image if exists
                     if (!empty($faculty['image'])) {
-                        $old_image = "../../assets/images/faculty/" . $faculty['image'];
+                        $old_image = "../../assets/uploads//faculty/" . $faculty['image'];
                         if (file_exists($old_image)) {
                             unlink($old_image);
                         }
@@ -152,7 +152,7 @@ include '../../includes/admin-header.php';
                             <label for="image" class="form-label">Profile Image:</label>
                             <?php if (!empty($faculty['image'])): ?>
                                 <div class="mb-2">
-                                    <img src="../../assets/images/faculty/<?php echo htmlspecialchars($faculty['image']); ?>" 
+                                    <img src="../../assets/uploads//faculty/<?php echo htmlspecialchars($faculty['image']); ?>" 
                                          alt="Current profile image" class="img-thumbnail" style="max-width: 200px;">
                                 </div>
                             <?php endif; ?>

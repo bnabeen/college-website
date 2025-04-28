@@ -39,7 +39,7 @@ include 'includes/header.php';
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="assets/images/campus.jpg" alt="Nepal College of Technology" class="img-fluid rounded">
+                <img src="assets/uploads//campus.jpg" alt="Nepal College of Technology" class="img-fluid rounded">
             </div>
         </div>
     </div>
@@ -95,7 +95,7 @@ include 'includes/header.php';
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <?php if (!empty($course['image'])): ?>
-                                <img src="assets/images/<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
+                                <img src="assets/uploads//<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo htmlspecialchars($course['name']); ?></h3>
@@ -133,7 +133,7 @@ include 'includes/header.php';
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <?php if (!empty($blog['image'])): ?>
-                                <img src="assets/images/<?php echo $blog['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($blog['title']); ?>">
+                                <img src="assets/uploads//<?php echo $blog['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($blog['title']); ?>">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo htmlspecialchars($blog['title']); ?></h3>
