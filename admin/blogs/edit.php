@@ -55,17 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         // Update blog post
-        $stmt = mysqli_prepare($conn, "UPDATE blogs SET title = ?, content = ?, image = ?, author_id = ?, status = ?, updated_at = NOW() WHERE id = ?");
-        mysqli_stmt_bind_param($stmt, "sssisi", $title, $content, $image, $author_id, $status, $id);
+        $stmt = mysqli_prepare($conn, "UPDATE blogs SET title = ?, content = ?, status = ?, updated_at = NOW() WHERE id = ?");
+        mysqli_stmt_bind_param($stmt, "sssi", $title, $content, $status, $blog_id);
 
-        
         if (mysqli_stmt_execute($stmt)) {
             $_SESSION['message'] = 'Blog updated successfully';
             $_SESSION['message_type'] = 'success';
             header('Location: index.php');
             exit;
         } else {
-            $errors[] = "Error updating blog: " . mysqli_connect_error();
+            $errors[] = "Error updating blog: " . mysqli_error($conn);
         }
         mysqli_stmt_close($stmt);
     }
@@ -111,8 +110,8 @@ include '../../includes/admin-header.php';
                 </div>
 
                 <div class="mb-4">
-                    <label for="status" class="form-label fw-semibold">Status</label>
-                    <select class="form-select rounded-3" id="status" name="status">
+                    <label for="blog_status" class="form-label fw-semibold">Status</label>
+                    <select class="form-select rounded-3" id="blog_status" name="status">
                         <option value="draft" <?php echo $blog['status'] == 'draft' ? 'selected' : ''; ?>>Draft</option>
                         <option value="published" <?php echo $blog['status'] == 'published' ? 'selected' : ''; ?>>Published</option>
                     </select>

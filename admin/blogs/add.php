@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $image_error = $_FILES['image']['error'];
 
     
-    $image_folder = "C:/xampp/htdocs/learn-php/college-website/assets/uploads/blogs/" . basename($image_name);
+    $image_folder = "../../assets/uploads//blogs/" . basename($image_name);
 
     if ($image_error === 0) {
         if ($image_size > 5242880) {

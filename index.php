@@ -24,56 +24,61 @@ if ($result_blogs && mysqli_num_rows($result_blogs) > 0) {
 }
 
 include 'includes/header.php';
-?>
-
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1>Welcome to Nepal College of Technology</h1>
-                <p class="lead">Empowering students with quality education and practical skills for the future.</p>
-                <div class="mt-4">
-                    <a href="courses.php" class="btn btn-primary mr-2">Explore Courses</a>
-                    <a href="contact.php" class="btn btn-outline-primary">Contact Us</a>
+?>    <div class="section-hero position-relative">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6 position-relative z-1">
+                    <h1 class="display-3 fw-bold mb-4">Welcome to Nepal College of Technology</h1>
+                    <p class="lead mb-4">Empowering students with quality education and practical skills for the future.</p>
+                    <div class="d-flex gap-3">
+                        <a class="btn btn-light btn-lg" href="courses.php" role="button">
+                            <i class="fas fa-graduation-cap me-2"></i>Explore Courses
+                        </a>
+                        <a class="btn btn-outline-light btn-lg" href="contact.php" role="button">
+                            <i class="fas fa-envelope me-2"></i>Contact Us
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <img src="assets/uploads//campus.jpg" alt="Nepal College of Technology" class="img-fluid rounded">
             </div>
         </div>
+        <div class="position-absolute top-0 end-0 w-50 h-100 d-none d-lg-block bg-overlay"></div>
     </div>
-</section>
 
 <!-- Features Section -->
-<section class="features-section py-5 bg-light">
+<section class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">Why Choose Us</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-graduation-cap fa-3x mb-3 text-primary"></i>
-                        <h3>Quality Education</h3>
-                        <p>We provide top-notch education with modern teaching methodologies and experienced faculty.</p>
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="custom-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-primary bg-opacity-10 rounded-circle p-3 d-inline.block mb-4">
+                            <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Quality Education</h3>
+                        <p class="text-secondary mb-0">We provide top-notch education with modern teaching methodologies and experienced faculty.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-laptop-code fa-3x mb-3 text-primary"></i>
-                        <h3>Modern Facilities</h3>
-                        <p>Our campus is equipped with state-of-the-art labs, libraries, and digital classrooms.</p>
+            <div class="col-md-4">
+                <div class="custom-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-4">
+                            <i class="fas fa-laptop-code fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Modern Facilities</h3>
+                        <p class="text-secondary mb-0">Our campus is equipped with state-of-the-art labs, libraries, and digital classrooms.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-user-tie fa-3x mb-3 text-primary"></i>
-                        <h3>Career Opportunities</h3>
-                        <p>We offer excellent placement opportunities and career guidance to all our students.</p>
+            <div class="col-md-4">
+                <div class="custom-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-4">
+                            <i class="fas fa-user-tie fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Career Opportunities</h3>
+                        <p class="text-secondary mb-0">We offer excellent placement opportunities and career guidance to all our students.</p>
                     </div>
                 </div>
             </div>
@@ -95,7 +100,7 @@ include 'includes/header.php';
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <?php if (!empty($course['image'])): ?>
-                                <img src="assets/uploads//<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
+                                <img src="assets/uploads/courses/<?php echo $course['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['name']); ?>">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo htmlspecialchars($course['name']); ?></h3>
@@ -123,7 +128,7 @@ include 'includes/header.php';
 <section class="blogs-section py-5 bg-light">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Recent News & Events</h2>
+            <h2>Recent Blog Posts</h2>
             <a href="blogs.php" class="btn btn-outline-primary">View All</a>
         </div>
 
@@ -133,7 +138,7 @@ include 'includes/header.php';
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
                             <?php if (!empty($blog['image'])): ?>
-                                <img src="assets/uploads//<?php echo $blog['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($blog['title']); ?>">
+                                <img src="assets/uploads/blogs/<?php echo $blog['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($blog['title']); ?>">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo htmlspecialchars($blog['title']); ?></h3>

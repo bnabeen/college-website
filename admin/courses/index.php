@@ -75,7 +75,7 @@ include '../../includes/admin-header.php';
                                     <td><?php echo $course['id']; ?></td>
                                     <td>
                                         <?php if (!empty($course['image'])): ?>
-                                            <img src="../../assets/images/<?php echo htmlspecialchars($course['image']); ?>" 
+                                            <img src="../../assets/uploads/courses/<?php echo htmlspecialchars($course['image']); ?>" 
                                                 alt="<?php echo htmlspecialchars($course['name']); ?>" 
                                                 class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
                                         <?php endif; ?>

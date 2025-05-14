@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo SITE_NAME ?? 'NCT Admin'; ?> - Admin Panel</title>
-    
-    <!-- Bootstrap CSS -->
+      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Admin CSS -->
-    <link rel="stylesheet" href="<?php echo BASE_URL ?? ''; ?>/assets/css/admin.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/main.css">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -28,13 +28,7 @@
                 $profile_image = $user['profile_image'] ?? 'default-avatar.png';
                 mysqli_stmt_close($profile_query);
                 ?>
-                <img src="<?php echo BASE_URL . '/assets/uploads//admin/' . htmlspecialchars($profile_image); ?>" 
-                     alt="<?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Admin'); ?>" 
-                     class="rounded-circle me-2" 
-                     style="width: 32px; height: 32px; object-fit: cover;">
-                <!-- <span class="d-none d-sm-inline">
-                    <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Admin'); ?>
-                </span> -->
+                <span class="fw-bold text-primary">NCT Admin</span>
             </a>
           
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -45,11 +39,6 @@
 
             <div class="collapse navbar-collapse" id="adminNavbar">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'dashboard.php') ? 'active' : ''; ?>" 
-                           href="<?php echo BASE_URL ?? ''; ?>/admin/dashboard.php">
-                           Dashboard
-                        </a>
                     <li class="nav-item">
                         <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'blogs/index.php') ? 'active' : ''; ?>" 
                            href="<?php echo BASE_URL ?? ''; ?>/admin/blogs/index.php">

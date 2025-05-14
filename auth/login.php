@@ -62,14 +62,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - Nepal College of Technology</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-primary {
+            width: 100%;
+            margin-bottom: 1rem; /* Added margin below the button */
+        }
+
+        .forgot-password {
+            margin-top: 1rem;
+            text-align: center;
+        }
+    </style>
 </head>
 <body class="login-page">
-    <div class="login-container">
+    <div class="center-container">
         <div class="login-form">
-            <h1>Admin Login</h1>
-            
+            <h3 class="text-center mb-4">Admin Login</h3>
             <?php if (!empty($errors)): ?>
                 <div class="alert alert-danger">
                     <ul>
@@ -79,23 +109,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </ul>
                 </div>
             <?php endif; ?>
-            
             <form method="POST" action="">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>">
+                    <input type="text" id="username" name="username" class="form-control" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" placeholder="Enter your username">
                 </div>
-                
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
                 </div>
-                
+                <div class="form-group mt-4">
                 <button type="submit" id="submit" class="btn btn-primary">Login</button>
+                </div>
             </form>
-            
-            <p><a href="reset-password.php">Forgot Password?</a></p>
+            <p class="forgot-password"><a href="reset-password.php">Forgot Password?</a></p>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

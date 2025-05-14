@@ -58,11 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['message'] = "Image size is too large!";
                 $_SESSION['message_type'] = 'danger';
             } else {
-                $image_folder = "../../assets/images/" . basename($image_name);
+                $image_folder = "../../assets/uploads/courses/" . basename($image_name);
                 if (move_uploaded_file($image_tmp_name, $image_folder)) {
                     // Delete old image if exists
                     if (!empty($course['image'])) {
-                        $old_image = "../../assets/images/" . $course['image'];
+                        $old_image = "../../assets/uploads/courses" . $course['image'];
                         if (file_exists($old_image)) {
                             unlink($old_image);
                         }
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     } else {
-        $image_name = $course['image']; // Keep existing image
+        $image_name = $course['image']; 
     }
 
     // Update course
@@ -144,7 +144,7 @@ include '../../includes/admin-header.php';
                     <label for="image" class="form-label">Image:</label>
                     <?php if (!empty($course['image'])): ?>
                         <div class="mb-2">
-                            <img src="../../assets/images/<?php echo htmlspecialchars($course['image']); ?>" 
+                            <img src="../../assets/uploads/courses/<?php echo htmlspecialchars($course['image']); ?>" 
                                 alt="Current course image" class="img-thumbnail" style="max-width: 200px;">
                         </div>
                     <?php endif; ?>

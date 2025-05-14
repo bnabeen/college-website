@@ -18,12 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fee = mysqli_real_escape_string($conn, $_POST['fee']);
     $requirements = mysqli_real_escape_string($conn, $_POST['requirements']);
 
+    // Handle image upload
     $image_name = $_FILES['image']['name'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
     $image_size = $_FILES['image']['size'];
     $image_error = $_FILES['image']['error'];
 
-    $image_folder = "../../assets/images/" . basename($image_name);
+    // Generate unique filename
+    $image_ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
+    $new_image_name = uniqid() . '.' . $image_ext;
+    $upload_dir = "../../assets/uploads//courses/";
+    
+    // Create directory if it doesn't exist
+    if (!file_exists($upload_dir)) {
+        mkdir($upload_dir, 0777, true);
+    }
+    
+    $image_folder = $upload_dir . $new_image_name;
 
     if ($image_error === 0) {
         if ($image_size > 5242880) {

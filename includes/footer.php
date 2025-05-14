@@ -61,7 +61,7 @@
             <!-- Newsletter -->
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Newsletter</h5>
-                <p class="text-muted">Subscribe to our newsletter for updates and news.</p>
+                <p class="text-white mb-4">Subscribe to our newsletter for updates and news.</p>
                 <form class="newsletter-form">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control bg-dark border-secondary text-white" 

@@ -32,7 +32,7 @@ $result = mysqli_stmt_get_result($stmt);
 if ($course = mysqli_fetch_assoc($result)) {
     // Delete the image file if it exists
     if (!empty($course['image'])) {
-        $image_path = "../../assets/images/" . $course['image'];
+        $image_path = "../../assets/uploads/courses" . $course['image'];
         if (file_exists($image_path)) {
             unlink($image_path);
         }
