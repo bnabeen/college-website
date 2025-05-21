@@ -42,24 +42,34 @@ include 'includes/header.php';
 ?>
 
 <!-- Hero Section -->
-<div class="section-hero position-relative overflow-hidden">
+ <div class="section-hero mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-4 fw-bold mb-3">Get in Touch</h1>
+                <p class="lead mb-0">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+            <div class="d-flex gap-3 align-items-center justify-content-center mt-4">
+                <a href="tel:+9771234567890" class="btn btn-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>Call Us
+                </a>
+                <a href="mailto:info@nct.edu.np" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Email Us
+                </a>
+                </div>
+        </div>
+    </div>
+</div>
+
     <div class="container position-relative z-1">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="display-4 fw-bold mb-3">Get in Touch</h1>
-                <p class="lead mb-4">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-                <div class="d-flex gap-3">
-                    <a href="tel:+9771234567890" class="btn btn-light btn-lg">
-                        <i class="fas fa-phone me-2"></i>Call Us
-                    </a>
-                    <a href="mailto:info@nct.edu.np" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-envelope me-2"></i>Email Us
-                    </a>
-                </div>
+                <h1 class="display-4 fw-bold mb-3"></h1>
+                <p class="lead mb-4"></p>
+
             </div>
         </div>
     </div>
-    <div class="position-absolute top-0 end-0 w-50 h-100 d-none d-lg-block bg-overlay"></div>
 </div>
 
 <!-- Contact Section -->
@@ -79,7 +89,7 @@ include 'includes/header.php';
                         </div>
                         <div class="flex-grow-1 ms-3">
                             <h4 class="h6 mb-1">Our Location</h4>
-                            <p class="mb-0">123 College Road<br>Kathmandu, Nepal</p>
+                            <p class="mb-0">Near your Heart<br>Kathmandu, Nepal</p>
                         </div>
                     </div>
 
@@ -92,7 +102,7 @@ include 'includes/header.php';
                         <div class="flex-grow-1 ms-3">
                             <h4 class="h6 mb-1">Call Us</h4>
                             <p class="mb-0">
-                                <a href="tel:+9771234567890" class="text-body text-decoration-none">+977 1234567890</a>
+                                <a href="tel:+9771234567890" class="text-body text-decoration-none">+977 9863442548</a>
                             </p>
                         </div>
                     </div>

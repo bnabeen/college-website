@@ -6,20 +6,20 @@
             <div class="col-lg-4 col-md-6">
                 <div class="footer-content pe-lg-4">
                     <div class="mb-4">
-                        <img src="<?php echo BASE_URL ?? ''; ?>/assets/uploads//logo-white.png" alt="NCT Logo" height="40">
+                        <span class="fw-bold text-primary">NCT</span>
                     </div>
-                    <p class="text-muted mb-4">We are a leading institution in Nepal dedicated to providing quality education and practical skills for the future.</p>
+                    <p class="mb-4 text-light">We are a leading institution in Nepal dedicated to providing quality education and practical skills for the future.</p>
                     <div class="social-links">
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2">
+                        <a href="https:/facebook.com/nabeen.me" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm rounded-circle me-2">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2">
+                        <a href="https:/x.com/bnabeen_" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm rounded-circle me-2">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2">
+                        <a href="https:/linkedin.com/in/nabeenbudha" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm rounded-circle me-2">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                        <a href="https:/instagram.com/nabeen.me" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm rounded-circle">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -45,11 +45,11 @@
                 <ul class="list-unstyled footer-info">
                     <li class="d-flex mb-3">
                         <i class="fas fa-map-marker-alt text-primary mt-1 me-3"></i>
-                        <span>123 College Road<br>Kathmandu, Nepal</span>
+                        <span>Near your Heart<br>Kathmandu, Nepal</span>
                     </li>
                     <li class="d-flex mb-3">
                         <i class="fas fa-phone-alt text-primary mt-1 me-3"></i>
-                        <span>+977 1234567890</span>
+                        <span>+977 9863442548</span>
                     </li>
                     <li class="d-flex mb-3">
                         <i class="fas fa-envelope text-primary mt-1 me-3"></i>

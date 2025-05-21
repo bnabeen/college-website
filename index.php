@@ -41,7 +41,6 @@ include 'includes/header.php';
                 </div>
             </div>
         </div>
-        <div class="position-absolute top-0 end-0 w-50 h-100 d-none d-lg-block bg-overlay"></div>
     </div>
 
 <!-- Features Section -->
